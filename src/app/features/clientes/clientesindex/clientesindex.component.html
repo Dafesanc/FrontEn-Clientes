@@ -1,0 +1,69 @@
+<h2 class="titulo"> Administrador clientes</h2>
+<div class="card">
+
+  <div class="header-container">
+    <div class="header-left">
+      <button pButton pRipple label="Nuevo" class="p-button-success" icon="pi pi-plus" (click)="showAddModal()"></button>
+
+    </div>
+    <div class="header-right">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText [(ngModel)]="searchCedula" placeholder="Buscar por cedula..." />
+      </span>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr class="st_cabecera">
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Cedula</th>
+        <th>Telefono</th>
+        <th>Edad</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of filteredClientes" class="st_cuerpo">
+        <td>{{client.id}}</td>
+        <td>{{ client.nombre }}</td>
+        <td>{{ client.cedula }}</td>
+        <td>{{ client.telefono }}</td>
+        <td>{{ client.edad }}</td>
+        <th class="container_botones">
+          <button pRipple type="button" (click)="showEditModal(client)"
+            class="text-white bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-full text-sm p-25 text-center inline-flex items-center mr-2 dark:bg-red-800 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <i class="pi pi-pencil w-4 h-4" aria-hidden="true" fill="none">
+            </i>
+          </button>
+          &nbsp;
+          <button pRipple type="button" (click)="deleteUser(client)"
+            class="text-white bg-black focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-full text-sm p-25 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <i class="pi pi-trash w-4 h-4">
+            </i>
+          </button>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-crear-clientes
+[displayAddModal]="displayAddModal"
+(clickClose)="hideAddModal($event)"
+(clickAdd)="saveClientToList($event)">
+</app-crear-clientes>
+<app-editar-clientes
+[displayAddEditModal]="displayAddEditModal"
+[selectedCliente]="selectedCliente"
+(clickClose)="hideEditModal($event)"
+(clickAddEdit)="saveOrUpdateClientToList($event)">
+</app-editar-clientes>
+<p-confirmDialog #cd header="Confirmación" icon="pi pi-exclamation-triangle" class="p-dialog-footer">
+  <ng-template pTemplate="footer">
+      <button type="button" pButton icon="pi pi-times" label="No" (click)="cd.reject()" class="mr-2.5 px:1 py:1 bg-black text-white"></button>
+      <button type="button" pButton icon="pi pi-check" label="Sí" (click)="cd.accept()" class="ml-1 px:1 py:1 bg-red-800 text-white"></button>
+  </ng-template>
+</p-confirmDialog>
+<p-toast position="top-right"></p-toast>

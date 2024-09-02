@@ -1,0 +1,40 @@
+<p-dialog [(visible)]="displayAddModal" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '40vw' }" [draggable]="false" [resizable]="true" (onHide)="closeModal()">
+  <ng-template pTemplate="header">
+      <div class="header_modal custom-max-w-screen-lg">
+          <span class="custom-text-xl custom-font-bold custom-rounded custom-px-2 custom-bg-red-800 custom-text-white">Mantenimiento Cliente</span>
+      </div>
+  </ng-template>
+  <form [formGroup]="createClienteForm">
+      <div class="grid gap-6 mb-6 md:grid-cols-2">
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="nombres">Nombres</label>
+              <input type="text" pInputText id="nombres" formControlName="nombres" placeholder="Ingresa tus nombres completos" class="input_form" />
+              <small class="p-error block" *ngIf="createClienteForm.controls['nombres'].invalid && createClienteForm.dirty"> El campo es invalido </small>
+
+          </div>
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="apellidos">Cedula</label>
+              <input type="text" pInputText id="cedula" formControlName="cedula" placeholder="Ingresa tus apellidos completos" class="input_form" />
+              <small class="p-error block" *ngIf="createClienteForm.controls['cedula'].invalid && createClienteForm.controls['cedula'].dirty"> El campo es invalido </small>
+
+          </div>
+
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="usuario">Telefono</label>
+              <input type="text" pInputText id="usuario" formControlName="telefono" class="input_form" placeholder="0981......."/>
+              <small class="p-error block" *ngIf="createClienteForm.controls['telefono'].invalid && createClienteForm.controls['telefono'].dirty"> El campo es invalido </small>
+
+          </div>
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="edad">Edad</label>
+              <input type="text" pInputText id="edad" formControlName="edad" placeholder="Ingresa tu identificación" class="input_form"/>
+              <small class="p-error block" *ngIf="createClienteForm.controls['edad'].invalid && createClienteForm.controls['edad'].dirty"> El campo es invalido </small>
+          </div>
+      </div>
+  </form>
+<ng-template pTemplate="footer">
+  <button class="btn-guardar" [disabled]="createClienteForm.invalid" (click)="addUser()" ><i class="pi pi-save"></i> Guardar</button>
+  <button class="btn-cancelar" (click)="closeModal()"><i class="pi pi-sign-out"></i> Cancelar</button>
+
+</ng-template>
+</p-dialog>

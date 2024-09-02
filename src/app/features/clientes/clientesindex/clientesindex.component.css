@@ -1,0 +1,154 @@
+
+.titulo{
+  color: #f5f5f5;
+  font-size:xx-large;
+  text-align: center;
+  padding-top: 10px;
+
+}
+
+.card {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: #fff;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+
+thead {
+  background-color: #f9f9f9;
+}
+
+th, td {
+  padding: 8px 4px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+
+}
+
+th {
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #bec2cb;
+}
+.st_cabecera{
+  color: #1a202c; /* Un tono oscuro de gris */
+  font-size: 14px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  text-decoration: none;
+
+}
+
+.st_cuerpo{
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: currentColor;
+  font-size: 0.875rem; /* 14px */
+
+}
+.container_botones{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-red-800 {
+  background-color: #991b1b; /* Red 800 */
+}
+
+.focus\:ring-4:focus {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:ring-red-300:focus {
+  box-shadow: 0 0 0 4px rgba(252, 165, 165, 0.5); /* Red 300 */
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.p-25 {
+  padding: 0.625rem; /* 10px */
+}
+
+.dark .dark\:bg-red-800 {
+  background-color: #991b1b; /* Red 800 */
+}
+
+.dark .dark\:hover-bg-blue-700:hover {
+  background-color: #1d4ed8; /* Blue 700 */
+}
+
+.dark .dark\:focus-ring-blue-800:focus {
+  box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.5); /* Blue 800 */
+}
+.bg-black{
+  background-color: black;
+}
+
+button{
+  border-width: 0;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1; /* Ajusta según tu diseño */
+  border-bottom: 1px solid #ccc; /* Ajusta según tu diseño */
+}
+.header-left {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.p-button{
+  padding: 5px 8px;
+}
+
+.p-inputtext{
+  padding: 6px 8px;
+}
+.p-input-icon-left > .p-inputtext {
+  padding-left: 2.5rem;
+}
+
+.p-dialog-footer{
+  display: flex;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+}
+
+
+
+

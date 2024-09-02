@@ -1,0 +1,46 @@
+<p-dialog [(visible)]="displayAddEditModal" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '40vw' }" [draggable]="false" [resizable]="true" (onHide)="closeModal()">
+  <ng-template pTemplate="header">
+      <div class="header_modal custom-max-w-screen-lg">
+          <span class="custom-text-xl custom-font-bold custom-rounded custom-px-2 custom-bg-red-800 custom-text-white">Mantenimiento Cliente</span>
+      </div>
+  </ng-template>
+  <form [formGroup]="clienteForm">
+      <div class="grid gap-6 mb-6 md:grid-cols-2">
+          <div class="field">
+            <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-s900 custom-font-medium dark-mode::custom-dark-text-white" for="id">Id</label>
+            <input type="text" pInputText id="id" formControlName="id" placeholder="Ingresa tus nombres completos" class="input_form" />
+            <small class="p-error block" *ngIf="clienteForm.controls['id'].invalid && clienteForm.dirty"> El campo es invalido </small>
+
+          </div>
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="nombre">Nombres</label>
+              <input type="text" pInputText id="nombre" formControlName="nombre" placeholder="Ingresa tus nombres completos" class="input_form" />
+              <small class="p-error block" *ngIf="clienteForm.controls['nombre'].invalid && clienteForm.dirty"> El campo es invalido </small>
+
+          </div>
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="cedula">Cedula</label>
+              <input type="text" pInputText id="cedula" formControlName="cedula" placeholder="Ingresa tus apellidos completos" class="input_form" />
+              <small class="p-error block" *ngIf="clienteForm.controls['cedula'].invalid && clienteForm.controls['cedula'].dirty"> El campo es invalido </small>
+
+          </div>
+
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="usuario">Telefono</label>
+              <input type="text" pInputText id="usuario" formControlName="telefono" class="input_form" placeholder="0981......."/>
+              <small class="p-error block" *ngIf="clienteForm.controls['telefono'].invalid && clienteForm.controls['telefono'].dirty"> El campo es invalido </small>
+
+          </div>
+          <div class="field">
+              <label class="custom-block custom-text-sm custom-mb-1 custom-text-gray-900 custom-font-medium dark-mode::custom-dark-text-white" for="edad">Edad</label>
+              <input type="text" pInputText id="edad" formControlName="edad" placeholder="Ingresa tu identificación" class="input_form"/>
+              <small class="p-error block" *ngIf="clienteForm.controls['edad'].invalid && clienteForm.controls['edad'].dirty"> El campo es invalido </small>
+          </div>
+      </div>
+  </form>
+<ng-template pTemplate="footer">
+  <button class="btn-guardar" [disabled]="clienteForm.invalid" (click)="EditCliente()" ><i class="pi pi-save"></i> Guardar</button>
+  <button class="btn-cancelar" (click)="closeModal()"><i class="pi pi-sign-out"></i> Cancelar</button>
+
+</ng-template>
+</p-dialog>
